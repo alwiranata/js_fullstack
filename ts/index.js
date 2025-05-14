@@ -1,0 +1,11 @@
+var nama = "aldo";
+var angka = 12345678;
+var isActive = true;
+var datas = "aldo";
+datas = true;
+datas = "hello";
+var values = "123";
+values = 62895634889510;
+var User = "admin";
+User = "user";
+console.log(nama, angka, isActive, datas, values, User);
