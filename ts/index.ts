@@ -1,4 +1,4 @@
-let nama :string = "aldo"
+let nama : string = "aldo"
 let angka: number = 12345678
 let isActive : boolean = true
 let datas: any = "aldo"
@@ -13,3 +13,30 @@ User ="user"
 
 console.log(nama , angka , isActive , datas , values , User)
 
+
+interface User {
+    id : number
+    name : string
+    active : boolean
+}
+
+type Role = "admin" | "Users" 
+
+enum Status {
+    Pending,
+    Approved,
+    Rejected
+}
+
+const profile1 : User= {
+    id : 1,
+    name : "Aldo Wiranata",
+    active : true
+}
+
+const profile : Role = "admin"
+const Active : Status = Status.Approved
+
+console.log(profile1)
+console.log(profile)
+console.log(Active)
