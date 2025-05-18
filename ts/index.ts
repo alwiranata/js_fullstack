@@ -144,3 +144,41 @@ const dataPersegiPanjang  ={
 
 const getDataPersegiPanjang =  getLuasPersegiPanjang(dataPersegiPanjang) 
 console.log(getDataPersegiPanjang.vLuas)
+
+const myRole  = (p ?: string) =>{
+    console.log(`Hello`, p ?? "Guest" )
+}
+myRole()
+myRole("Aldo")
+
+//type
+
+type addData = (d1 : number, d2 : number ) => number
+
+
+
+const addDatas1 : addData = (val1, val2) =>  val1 + val2 
+const addDatas2 : addData = (val1, val2) => val1 - val2
+console.log(addDatas1(10 ,20)) 
+console.log(addDatas2(10 ,20)) 
+
+interface mhs {
+    nim  : number
+    nama : string
+    prodi : string
+    email : string
+}
+
+interface profileMhs extends  mhs {
+    picture ?: string
+}
+ 
+const getProfileMhs : profileMhs = {
+    nim : 12345678,
+    nama : "Aldo Wiranata",
+    prodi : "TI",
+    email : "aldowiranata16@gmail.com",
+    picture : "aldo.jpg"
+}
+
+console.log(getProfileMhs)

@@ -84,4 +84,21 @@ var dataPersegiPanjang = {
     l: 20
 };
 var getDataPersegiPanjang = getLuasPersegiPanjang(dataPersegiPanjang);
-console.log(getDataPersegiPanjang);
+console.log(getDataPersegiPanjang.vLuas);
+var myRole = function (p) {
+    console.log("Hello", p !== null && p !== void 0 ? p : "Guest");
+};
+myRole();
+myRole("Aldo");
+var addDatas1 = function (val1, val2) { return val1 + val2; };
+var addDatas2 = function (val1, val2) { return val1 - val2; };
+console.log(addDatas1(10, 20));
+console.log(addDatas2(10, 20));
+var getProfileMhs = {
+    nim: 12345678,
+    nama: "Aldo Wiranata",
+    prodi: "TI",
+    email: "aldowiranata16@gmail.com",
+    picture: "aldo.jpg"
+};
+console.log(getProfileMhs);
