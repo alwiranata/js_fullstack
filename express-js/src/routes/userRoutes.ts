@@ -17,3 +17,4 @@ router.put("/users/:id",validate(userSchema),updateUser)
 router.delete("/users/:id",deleteUser)
 
 export default router
+

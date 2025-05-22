@@ -3,9 +3,12 @@ import router from "./routes/userRoutes"
 import { logger } from "./middleware/logger"
 import { notFound } from "./middleware/notFound"
 import { errorHandler } from "./middleware/errorHandler"
+import { initUsers } from "./data/users"
 
 const app = express()
 const port = 5001
+
+initUsers()
 
 app.use(logger)
 app.use(express.json())

@@ -30,7 +30,7 @@ export const updateUser = (req: Request, res: Response) => {
 		const id = Number(req.params.id)
 		const updateUser: User = req.body
 
-		const index = users.findIndex((user) => user.id === id)
+		const index = users.findIndex((user : User) => user.id === id)
 		if (index !== -1) {
 			users[index] = {...users[index], ...updateUser}
 
@@ -51,7 +51,7 @@ export const updateUser = (req: Request, res: Response) => {
 export const deleteUser = (req: Request, res: Response) => {
 	try {
 		const id = Number(req.params.id)
-		const index = users.findIndex((user) => user.id === id)
+		const index = users.findIndex((user : User) => user.id === id)
 
 		if (index !== -1) {
 			const deletedUser = users[index]
