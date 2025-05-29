@@ -11,6 +11,7 @@ export async function initUsers() {
 			email: "aldowiranata16@gmail.com",
 			password: await bcrypt.hash("2455201036", 10),
 			role: "admin",
+			isActive : true
 		},
 		{
 			id: 2,
@@ -18,6 +19,7 @@ export async function initUsers() {
 			email: "farel@gmail.com",
 			password: await bcrypt.hash("24455201035", 10),
 			role: "user",
+			isActive : false
 		},
 	]
 }

@@ -8,12 +8,6 @@ const isIdUnique = async (id: number | undefined): Promise<boolean> => {
 }
 
 export const userSchema = yup.object({
-	id: yup
-		.number()
-		.required()
-		.test("unique-id", "ID already", async function (value) {
-			return await isIdUnique(value)
-		}),
 	name: yup.string().required("Name is required"),
 	email: yup
 		.string()
@@ -27,9 +21,13 @@ export const userSchema = yup.object({
 		.string()
 		.oneOf(["admin", "user"], "Role must be either admin or user")
 		.required("Role is Required"),
+	isActive: yup
+		.boolean()
+		.oneOf([true ,false] ,"isActive must be true or false")
+		.required("isActive is Required"),
 })
 
 export const loginSchema = yup.object({
-	email: yup.string().email("Invailid email format").required("Email is Required"),
+	email: yup.string().email("Invalid email format").required("Email is Required"),
   password : yup.string().min(10, "Password min 10").required("Password is Required")
 })

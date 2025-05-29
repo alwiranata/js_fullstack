@@ -1,6 +1,7 @@
 import swaggerJSDoc from "swagger-jsdoc"
 import swaggerUI from "swagger-ui-express"
 import { Express } from "express"
+import { boolean } from "yup"
 
 const options: swaggerJSDoc.Options = {
   definition: {
@@ -22,11 +23,11 @@ const options: swaggerJSDoc.Options = {
         User: {
           type: "object",
           properties: {
-            id: { type: "integer", example: 1 },
             name : {type : "string " , example : "MyUser"},
             email: { type: "string", example: "user@example.com" },
             password: { type: "string", example: "hashedpassword" },
-            role: { type: "string", example: "admin" }
+            role: { type: "string", example: "admin" },
+            isActive : {type : boolean  , example : true}
           },
           required: ["email", "password"],
         },

@@ -62,7 +62,14 @@ export const deleteUser = (req: Request, res: Response) => {
 
 export const register = (req: Request, res: Response) => {
 	try {
-		const newUser: User = req.body
+		const newId = users.length > 0 ? users[users.length - 1].id + 1 : 1
+		const isActived = false
+
+		const newUser: User = {
+			id: newId,
+			...req.body,
+			isActive : isActived,
+		}
 		users.push(newUser)
 
 		res.status(201).json({
@@ -106,24 +113,22 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
 		const token = jwt.sign(
 			{
-				id: user.id, 
+				id: user.id,
 				email: user.email,
-				role: user.role 
+				role: user.role,
 			},
 			process.env.JWT_SECRET as string,
-			
+
 			{
 				expiresIn: "1h",
 			}
 		)
 
-
 		res.status(200).json({
 			message: "Login Successfully",
-			token : token,
+			token: token,
 			data: user,
 		})
-
 	} catch (error) {
 		console.error(error)
 		res.status(500).json({
