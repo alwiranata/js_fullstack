@@ -6,6 +6,7 @@ import {
 	updateUser,
 	deleteUser,
 	login,
+	activateUser
 } from "../controller/userController"
 import {validate} from "../middleware/validate"
 import {userSchema, loginSchema} from "../validators/userValidator"
@@ -125,7 +126,27 @@ router.post("/users/login", validate(loginSchema), login)
  *       401:
  *         description: Invalid credentials
  */
-
+router.get("/users/activate/:token", activateUser)
+/**
+ * @swagger
+ * /api/users/activate/{token}:
+ *   get:
+ *     summary: Activate user account using token
+ *     tags: [Users]
+ *     parameters:
+ *       - name: token
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Account activated successfully
+ *       400:
+ *         description: Invalid or expired token
+ *       404:
+ *         description: User not found
+ */
 
 export default router
  

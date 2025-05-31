@@ -23,11 +23,10 @@ const options: swaggerJSDoc.Options = {
         User: {
           type: "object",
           properties: {
-            name : {type : "string " , example : "MyUser"},
+            name : {type : "string" , example : "MyUser"},
             email: { type: "string", example: "user@example.com" },
             password: { type: "string", example: "hashedpassword" },
             role: { type: "string", example: "admin" },
-            isActive : {type : boolean  , example : true}
           },
           required: ["email", "password"],
         },

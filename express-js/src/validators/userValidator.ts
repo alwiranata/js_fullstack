@@ -24,7 +24,6 @@ export const userSchema = yup.object({
 	isActive: yup
 		.boolean()
 		.oneOf([true ,false] ,"isActive must be true or false")
-		.required("isActive is Required"),
 })
 
 export const loginSchema = yup.object({
