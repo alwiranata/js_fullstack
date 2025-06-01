@@ -11,7 +11,7 @@ export const sendActivationEmail = async (email: string, token: string) => {
     },
   })
 
-  const activationLink = `http://localhost:3000/api/activate/${token}`
+const activationLink = `http://localhost:3000/api/users/activate/${token}`
   const mailOptions = {
     from: `"Aldo Site" <${process.env.EMAIL_USER}>`,
     to: email,
